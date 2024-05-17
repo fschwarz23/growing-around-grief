@@ -29,18 +29,20 @@
             position: relative;
             background-size: cover;
             background-position: center;
-            border-radius: 50%; /* Circle mask */
+            border-radius: 50%;
             transition: border-radius 0.5s ease;
+        }
+
+        .image-wrapper:hover {
+            border-radius: 0%;
         }
 
         .image-wrapper::before {
             content: '';
             display: block;
-            padding-top: 100%; /* Aspect ratio 1:1 for a square */
+            padding-top: 100%;
         }
 
-        /* Add your image URLs here */
-        
         #image1 { background-image: url('/images/1.jpg'); }
         #image2 { background-image: url('/images/2.jpg'); }
         #image3 { background-image: url('/images/3.jpg'); }
@@ -51,10 +53,10 @@
         #image8 { background-image: url('/images/8.jpg'); }
         #image9 { background-image: url('/images/9.jpg'); }
         #image10 { background-image: url('/images/10.jpg'); }
-        #image11{ background-image: url('/images/11.jpg'); }
-        #image12{ background-image: url('/images/12.jpg'); }
-        #image13{ background-image: url('/images/13.jpg'); }
-        #image14{ background-image: url('/images/14.jpg'); }
+        #image11 { background-image: url('/images/11.jpg'); }
+        #image12 { background-image: url('/images/12.jpg'); }
+        #image13 { background-image: url('/images/13.jpg'); }
+        #image14 { background-image: url('/images/14.jpg'); }
     </style>
 </head>
 <body>
@@ -74,21 +76,5 @@
         <div class="image-wrapper" id="image13"></div>
         <div class="image-wrapper" id="image14"></div>
     </div>
-    <script>
-        document.addEventListener('scroll', function() {
-            const imageWrappers = document.querySelectorAll('.image-wrapper');
-            const revealPoint = window.innerHeight * 0.75;
-
-            imageWrappers.forEach(wrapper => {
-                const wrapperTop = wrapper.getBoundingClientRect().top;
-
-                if (wrapperTop < revealPoint && wrapperTop > 0) {
-                    wrapper.style.borderRadius = '0%'; // Remove circle mask
-                } else {
-                    wrapper.style.borderRadius = '50%'; // Apply circle mask
-                }
-            });
-        });
-    </script>
 </body>
 </html>

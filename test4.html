@@ -12,6 +12,7 @@
             font-family: Arial, sans-serif;
             background-color: lightgrey;
         }
+
         .image-container {
             display: flex;
             flex-direction: column;
@@ -19,6 +20,7 @@
             gap: 20px;
             padding: 20px;
         }
+
         .image-wrapper {
             width: 100%;
             max-width: 400px;
@@ -27,18 +29,17 @@
             position: relative;
             background-size: cover;
             background-position: center;
-            border-radius: 50%;
+            border-radius: 50%; /* Circle mask */
             transition: border-radius 0.5s ease;
         }
-        .image-wrapper:hover {
-            border-radius: 0%;
-        }
+
         .image-wrapper::before {
             content: '';
             display: block;
-            padding-top: 100%;
+            padding-top: 100%; /* Aspect ratio 1:1 for a square */
         }
-        /* Image URLs */
+
+        /* Add your image URLs here */
         #image1 { background-image: url('/images/1.jpg'); }
         #image2 { background-image: url('/images/2.jpg'); }
         #image3 { background-image: url('/images/3.jpg'); }
@@ -72,5 +73,21 @@
         <div class="image-wrapper" id="image13"></div>
         <div class="image-wrapper" id="image14"></div>
     </div>
+    <script>
+        document.addEventListener('scroll', function() {
+            const imageWrappers = document.querySelectorAll('.image-wrapper');
+            const revealPoint = window.innerHeight * 0.75;
+
+            imageWrappers.forEach(wrapper => {
+                const wrapperTop = wrapper.getBoundingClientRect().top;
+
+                if (wrapperTop < revealPoint && wrapperTop > 0) {
+                    wrapper.style.borderRadius = '0%'; // Remove circle mask
+                } else {
+                    wrapper.style.borderRadius = '50%'; // Apply circle mask
+                }
+            });
+        });
+    </script>
 </body>
 </html>

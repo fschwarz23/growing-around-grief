@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circle Outline on Hover</title>
+<style>
+  body{padding:50px;}
+  .container {
+    position: relative;
+    display: inline-block;
+    font-size: 24px;
+    transition: font-size 0.3s ease;
+  }
+
+  .text {
+    transition: opacity 0.3s ease;
+  }
+
+  .circle {
+    position: absolute;
+    top: -15px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: border-color 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .container:hover .text {
+    opacity: 0;
+  }
+
+  .container:hover .circle {
+    opacity: 1;
+    border-color: #333; /* Color of the circle outline */
+  }
+
+  .container:hover .text {
+    font-size: 0;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="text" id="text">Hover over me</div>
+  <div class="circle" id="circle"></div>
+</div>
+</body>
+</html>

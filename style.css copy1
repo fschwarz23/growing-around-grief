@@ -1,0 +1,85 @@
+ @font-face { 
+   font-family: EditorialNew-Light; 
+   src: url(https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/EditorialNew-Light.otf?v=1715052533263); 
+   font-style: normal;
+} 
+
+ @font-face { 
+   font-family: EditorialNew-Ultralight; 
+   src: url(https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/EditorialNew-Ultralight.otf?v=1715052534702); 
+   font-style: normal;
+} 
+
+ 
+
+
+body, html {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 300;
+    height: 100%;
+    margin: 0;
+    background-color: #f0f0f0;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#bbb" fill-opacity="0.1"/></svg>');
+    background-attachment: fixed;
+}
+
+header {
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+nav div {
+    display: flex;
+    gap: 10px;
+    font-family: 'EditorialNew-Ultralight', serif;
+    color:#01987C;
+    font-size:15px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#01987C;
+}
+
+h1{
+  font-family: 'EditorialNew-Ultralight', serif; 
+  color:#01987C;
+  font-size:90px;
+}
+
+.circle-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.circle {
+    border: 2px solid #01987C;
+    border-radius: 50%;
+    position: absolute;
+    animation: rotate infinite linear;
+}
+
+.circle:nth-child(1) { width: 100px; height: 100px; top: 10%; left: 20%; animation-duration: 20s; }
+.circle:nth-child(2) { width: 150px; height: 150px; top: 30%; left: 50%; animation-duration: 15s; animation-direction: reverse; }
+.circle:nth-child(3) { width: 200px; height: 200px; top: 50%; left: 10%; animation-duration: 30s; }
+.circle:nth-child(4) { width: 250px; height: 250px; top: 70%; left: 60%; animation-duration: 25s; animation-direction: reverse; }
+.circle:nth-child(5) { width: 300px; height: 300px; top: 80%; left: 30%; animation-duration: 35s; }
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.stage-titles a {
+    position: absolute;
+    font-family: 'EditorialNew-Ultralight', serif; 
+    color:#01987C;
+    text-decoration: none;
+    font-size: 24px;
+}

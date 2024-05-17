@@ -1,0 +1,158 @@
+.heart {
+  /*background-color: red;*/
+  display: inline-block;
+  height: 300px;
+  margin: 0 10px;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 300px;
+  border: 1px solid #01987C;
+  animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+  0% { transform: rotate(-45deg) scale(1); }
+  50% { transform: rotate(-45deg) scale(1.3); }
+  100% { transform: rotate(-45deg) scale(1); }
+}
+
+
+.heart:before,
+.heart:after {
+  content: "";
+  /*background-color: red;*/
+  border-radius: 50%;
+  height: 300px;
+  position: absolute;
+  width: 300px;
+  border: 1px solid #01987C;
+}
+
+.heart:before {
+  top: -135px;
+  left: -1px;
+}
+
+.heart:after {
+  left: 135px;
+  top: -1px;
+}
+
+
+.intro {
+  display: flex;
+  justify-content: center; 
+  align-items: center;  
+  height: 100vh;  
+}
+
+
+h1{
+ font-family: "EditorialNew-Ultralight", serif;
+  color: #01987c;
+  font-size: 25px;
+  font-weight: normal;
+  font-style: normal;
+  margin: 0;
+  color: grey;
+   
+}
+
+h3{
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: grey;
+  margin: 0;
+ 
+}
+
+ol{
+  line-height: 1.5em;
+  font-size: 15px;
+  color: gray;
+  
+  
+}
+
+
+ol li{
+  list-style-type: decimal;
+  
+}
+p{
+  
+  line-height: 1.5em;
+  font-size: 15px;
+  color: gray;
+}
+
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+
+/*responsive*/
+@media only screen and (max-width: 600px) {
+  .main {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .heart {
+    height: 200px;
+    width: 200px;
+  }
+
+  .heart:before,
+  .heart:after {
+    height: 200px;
+    width: 200px;
+  }
+
+  .heart:before {
+    top: -100px;
+    left: -1px;
+  }
+
+  .heart:after {
+    left: 100px;
+    top: -1px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heart {
+    height: 150px;
+    width: 150px;
+  }
+
+  .heart:before,
+  .heart:after {
+    height: 150px;
+    width: 150px;
+  }
+
+  .heart:before {
+    top: -75px;
+    left: -1px;
+  }
+
+  .heart:after {
+    left: 75px;
+    top: -1px;
+  }
+
+   
+}

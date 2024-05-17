@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grief DoomScroll</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="bargaining.css" />
+    <link rel="stylesheet" href="doomscroll.css" />
+    <script src="bargaining.js" defer></script>
+
+    <!--loading fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+<nav>
+  <div class="wrapper">
+    
+    <div class="logo" id="logo"><a href="index.html">Growing around grief</a></div>
+    <input type="radio" name="slider" id="menu-btn">
+    <input type="radio" name="slider" id="close-btn">
+    <ul class="nav-links">
+      <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+
+      <li>
+        <a href="#" class="desktop-item">5 Stages</a>
+        <input type="checkbox" id="showDrop">
+        <label for="showDrop" class="mobile-item">5 Stages</label>
+        <ul class="drop-menu">
+          <li><a href="denial.html">1 : Denial</a></li>
+          <li><a href="anger.html">2 : Anger</a></li>
+          <li><a href="bargaining.html">3 : Bargaining</a></li>
+          <li><a href="depression.html">4 : Depression</a></li>
+           <li><a href="acceptance.html">5 : Acceptance</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="grief-doomscroll.html" class="desktop-item">(Grief DoomScroll)</a>
+        <input type="checkbox" id="showMega">
+        <label for="showMega" class="mobile-item">(Grief DoomScroll)</label>
+        <div class="mega-box">
+        
+        </div>
+      </li>
+      <li><a href="healing-post.html">(Healing Post)</a></li>
+    </ul>
+    <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+  </div>
+</nav>
+
+    <div class="container">
+      <div class="parallax-image">
+        <img
+          src="https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/1.jpg?v=1715553444348"
+        />
+      </div>
+      <div class="parallax-image">
+        <img
+          src="https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/2.jpg?v=1715538055737"
+        />
+      </div>
+      <div class="parallax-image">
+        <img
+          src="https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/3.jpg?v=1715538059348"
+        />
+      </div>
+      <div class="parallax-image">
+        <img
+          src="https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/4.jpg?v=1715538061697
+"
+          alt="City"
+        />
+      </div>
+      <div class="parallax-image">
+        <img
+          src="https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/5.jpg?v=1715538064673"
+        />
+      </div>
+      <div class="parallax-image">
+        <img
+          src="https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/6.jpg?v=1715538066664"
+        />
+      </div>
+      <div class="parallax-image">
+        <img
+          src="https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/7.jpg?v=1715538068817"
+        />
+      </div>
+      <div class="parallax-image">
+        <img
+          src="https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/8.jpg?v=1715538071013"
+        />
+      </div>
+      <div class="parallax-image">
+        <img
+          src="https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/9.jpg?v=1715538073311"
+        />
+      </div>
+
+      <div class="parallax-image">
+        <img
+          src="https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/10.jpg?v=1715538075204"
+        />
+      </div>
+      <div class="parallax-image">
+        <img
+          src="https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/11.jpg?v=1715553324774"
+        />
+      </div>
+      <div class="parallax-image">
+        <img
+          src="https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/12.jpg?v=1715538080171"
+        />
+      </div>
+      <div class="parallax-image">
+        <img
+          src="https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/13.jpg?v=1715538082577"
+        />
+      </div>
+      <div class="parallax-image">
+        <img
+          src="https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/14.jpg?v=1715538084625"
+        />
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".parallax-image img").forEach((img) => {
+          img.onload = function () {
+            img.style.width = img.naturalWidth + "px";
+            gsap.fromTo(
+              img,
+              {
+                scale: 0.5,
+              },
+              {
+                scale: 0.7, // Scales up when in the center
+                scrollTrigger: {
+                  trigger: img,
+                  start: "top center",
+                  end: "bottom center",
+                  toggleActions: "play none none reverse",
+                  scrub: true,
+                },
+              }
+            );
+          };
+          if (img.complete) img.onload();
+        });
+      });
+    </script>
+  </body>
+</html>

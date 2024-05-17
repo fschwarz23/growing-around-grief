@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Scrolling Images</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            background-color: lightgrey;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .image-wrapper {
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%; /* Circle mask */
+            transition: border-radius 0.5s ease;
+        }
+
+        .image-wrapper::before {
+            content: '';
+            display: block;
+            padding-top: 100%; /* Aspect ratio 1:1 for a square */
+        }
+
+        /* Add your image URLs here */
+        #image1 { background-image: url('https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/8.jpg?v=1715538071013'); }
+        #image2 { background-image: url('https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/1.jpg?v=1715553444348'); }
+        #image3 { background-image: url('https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/2.jpg?v=1715538055737'); }
+        #image4 { background-image: url('https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/3.jpg?v=1715538059348'); }
+        #image5 { background-image: url('https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/4.jpg?v=1715538061697'); }
+        #image6 { background-image: url('https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/5.jpg?v=1715538064673'); }
+        #image7 { background-image: url('https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/6.jpg?v=1715538066664'); }
+        #image8 { background-image: url('https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/9.jpg?v=1715538073311'); }
+        #image9 { background-image: url('https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/10.jpg?v=1715538075204'); }
+        #image10 { background-image: url('https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/11.jpg?v=1715553324774'); }
+        #image11 { background-image: url('https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/12.jpg?v=1715538080171'); }
+        #image12 { background-image: url('https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/13.jpg?v=1715538082577'); }
+        #image13 { background-image: url('https://cdn.glitch.global/95620d32-43c2-4825-be15-9c22c684efeb/14.jpg?v=1715538084625'); }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <div class="image-wrapper" id="image1"></div>
+        <div class="image-wrapper" id="image2"></div>
+        <div class="image-wrapper" id="image3"></div>
+        <div class="image-wrapper" id="image4"></div>
+        <div class="image-wrapper" id="image5"></div>
+        <div class="image-wrapper" id="image6"></div>
+        <div class="image-wrapper" id="image7"></div>
+        <div class="image-wrapper" id="image8"></div>
+        <div class="image-wrapper" id="image9"></div>
+        <div class="image-wrapper" id="image10"></div>
+        <div class="image-wrapper" id="image11"></div>
+        <div class="image-wrapper" id="image12"></div>
+        <div class="image-wrapper" id="image13"></div>
+    </div>
+    <script>
+        document.addEventListener('scroll', function() {
+            const imageWrappers = document.querySelectorAll('.image-wrapper');
+            const revealPoint = window.innerHeight * 0.75;
+
+            imageWrappers.forEach(wrapper => {
+                const wrapperTop = wrapper.getBoundingClientRect().top;
+
+                if (wrapperTop < revealPoint && wrapperTop > 0) {
+                    wrapper.style.borderRadius = '0%'; // Remove circle mask
+                } else {
+                    wrapper.style.borderRadius = '50%'; // Apply circle mask
+                }
+            });
+        });
+    </script>
+</body>
+</html>

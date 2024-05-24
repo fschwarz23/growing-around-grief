@@ -33,7 +33,7 @@ nav{
   font-family: "EditorialNew-Ultralight", serif;
   font-weight: normal;
   font-style: normal;
-  /*background: #242526;*/
+  background: white;
 }
 nav .wrapper{
   position: relative;
@@ -76,6 +76,11 @@ nav .wrapper{
 .nav-links li a:hover{
   opacity: 0.4;
 }
+
+.nav-links li a.active {
+  opacity: 0.4;
+}
+
 .nav-links .mobile-item{
   display: none;
 }

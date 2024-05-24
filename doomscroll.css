@@ -1,37 +1,77 @@
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;  
-  }
+ 
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+          
+            
 
-  html, body {
-    overflow-x: hidden;
-    font-family: Arial, sans-serif;
-    line-height: 0; 
-  }
+        }
+
+
+        .mainwrapper{
+            opacity: 0.95;
+            background-image: url("images/bg-noise.png");
+            background-position-x:0%;
+            background-position-y:0%;
+            background-repeat: repeat;
+            background-position: top left;
+        }
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 120px 20px 20px 20px
+        }
+
+        .image-wrapper {
+            width: 100%;
+            max-width: 400px;
+            height: 0;
+            padding-bottom: 100%; /* Aspect ratio 1:1 for a square */
+            overflow: hidden;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%; /* Circle mask */
+            transition: border-radius 0.5s ease;
+        }
+
+        /* Add your image URLs here */
+        #image1 { background-image: url('images/1.jpg'); }
+        #image2 { background-image: url('images/2.jpg'); }
+        #image3 { background-image: url('images/3.jpg'); }
+        #image4 { background-image: url('images/4.jpg'); }
+        #image5 { background-image: url('images/5.jpg'); }
+        #image6 { background-image: url('images/6.jpg'); }
+        #image7 { background-image: url('images/7.jpg'); }
+        #image8 { background-image: url('images/8.jpg'); }
+        #image9 { background-image: url('images/9.jpg'); }
+        #image10 { background-image: url('images/10.jpg'); }
+        #image11 { background-image: url('images/11.jpg'); }
+        #image12 { background-image: url('images/12.jpg'); }
+        #image13 { background-image: url('images/13.jpg'); }
+        #image14 { background-image: url('images/14.jpg'); }
+
+        @media (max-width: 600px) {
+            .image-wrapper {
+                max-width: 80%;
+                padding-bottom: 80%; /* Maintain aspect ratio */
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 900px) {
+            .image-wrapper {
+                max-width: 300px;
+                padding-bottom: 300px; /* Maintain aspect ratio */
+            }
+        }
+
+        @media (min-width: 901px) {
+            .image-wrapper {
+                max-width: 400px;
+                padding-bottom: 400px; /* Maintain aspect ratio */
+            }
+        }
   
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .parallax-image {
-    display: flex;
-    justify-content: center;  
-    align-items: flex-start;
-    
-    padding:0 !important;
-   
-  }
-
-  .parallax-image img {
-    display: block;
-    height: auto;  
-    width: auto; 
-    max-width: none;  
-    margin:0 !important;
-    padding:0 !important;
-    box-sizing: border-box !important;
-  }

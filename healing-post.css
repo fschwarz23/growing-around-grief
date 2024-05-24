@@ -1,3 +1,12 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+}
+
+
 .heart {
   /*background-color: red;*/
   display: inline-block;
@@ -56,7 +65,13 @@ h1{
   font-style: normal;
   margin: 0;
   color: grey;
+  text-align: center;
+  
    
+}
+
+  .h1head{
+  padding-top: 40px;
 }
 
 h3{
@@ -75,20 +90,30 @@ ol{
   line-height: 1.5em;
   font-size: 15px;
   color: gray;
-  
-  
+  margin-left:auto;
+  margin-right: auto;
+  max-width: 648px;
+  padding:20px 0 20px 0;  
+  list-style-position: inside;
+
 }
 
 
 ol li{
   list-style-type: decimal;
-  
+  padding-bottom: 10px;
+  padding-left: 20px; 
+   text-indent: -20px;
+   
 }
 p{
-  
-  line-height: 1.5em;
+  padding-top:20px;
+  line-height: 1.6em;
   font-size: 15px;
   color: gray;
+  margin-left:auto;
+  margin-right: auto;
+  max-width: 648px;
 }
 
 
@@ -100,11 +125,83 @@ p{
 
 
 
+/*Healing post form section*/
+
+.grain::before {
+  content: "";
+  top: -10rem;
+  left: -10rem;
+  width: calc(100% + 20rem);
+  height: calc(100% + 20rem);
+  z-index: 9999;
+  position: fixed;
+  background-image: url("images/noise.png");
+  opacity: .85;
+  pointer-events: none;
+  -webkit-animation: noise 1s steps(2) infinite;
+  animation: noise 1s steps(2) infinite;
+}
+
+@-webkit-keyframes noise{to{transform:translate3d(-7rem,0,0)}}@keyframes noise{0%{transform:translate3d(0,9rem,0)}10%{transform:translate3d(-1rem,-4rem,0)}20%{transform:translate3d(-8rem,2rem,0)}30%{transform:translate3d(9rem,-9rem,0)}40%{transform:translate3d(-2rem,7rem,0)}50%{transform:translate3d(-9rem,-4rem,0)}60%{transform:translate3d(2rem,6rem,0)}70%{transform:translate3d(7rem,-8rem,0)}80%{transform:translate3d(-9rem,1rem,0)}90%{transform:translate3d(6rem,-5rem,0)}to{transform:translate3d(-7rem,0,0)}}
+
+
+
+
+.healingpost {
+  background-color: #005747;
+  /*background-color: #202020;*/
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.healingpost h1 {
+  color: white;
+}
+
+.healingpost form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.healingpost textarea {
+  width: 648px;
+  padding: 25px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  resize: vertical;
+  min-height: 600px;
+  font-size: 14px;
+}
+
+.healingpost button {
+  background-color: #fff;
+  color: #01987C;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.healingpost button:hover {
+  background-color: #e6e6e6;
+}
+
+
 /*responsive*/
 @media only screen and (max-width: 600px) {
   .main {
     width: 100%;
     padding: 10px;
+  }
+  
+  .healingpost textarea {
+    width: 90%;
+    min-height: 500px;
   }
 }
 

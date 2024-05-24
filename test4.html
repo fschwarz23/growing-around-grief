@@ -10,9 +10,19 @@
             padding: 0;
             overflow-x: hidden;
             font-family: Arial, sans-serif;
-            background-color: lightgrey;
+            
+
         }
 
+
+        .wrapper{
+            opacity: 0.95;
+            background-image: url("images/bg-noise.png");
+            background-position-x:0%;
+            background-position-y:0%;
+            background-repeat: repeat;
+            background-position: top left;
+        }
         .image-container {
             display: flex;
             flex-direction: column;
@@ -24,19 +34,14 @@
         .image-wrapper {
             width: 100%;
             max-width: 400px;
-            height: 400px;
+            height: 0;
+            padding-bottom: 100%; /* Aspect ratio 1:1 for a square */
             overflow: hidden;
             position: relative;
             background-size: cover;
             background-position: center;
             border-radius: 50%; /* Circle mask */
             transition: border-radius 0.5s ease;
-        }
-
-        .image-wrapper::before {
-            content: '';
-            display: block;
-            padding-top: 100%; /* Aspect ratio 1:1 for a square */
         }
 
         /* Add your image URLs here */
@@ -54,11 +59,31 @@
         #image12 { background-image: url('images/12.jpg'); }
         #image13 { background-image: url('images/13.jpg'); }
         #image14 { background-image: url('images/14.jpg'); }
+
+        @media (max-width: 600px) {
+            .image-wrapper {
+                max-width: 80%;
+                padding-bottom: 80%; /* Maintain aspect ratio */
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 900px) {
+            .image-wrapper {
+                max-width: 300px;
+                padding-bottom: 300px; /* Maintain aspect ratio */
+            }
+        }
+
+        @media (min-width: 901px) {
+            .image-wrapper {
+                max-width: 400px;
+                padding-bottom: 400px; /* Maintain aspect ratio */
+            }
+        }
     </style>
 </head>
 <body>
-
-    <h2>HI PLEASE WORK</h2>
+    <div class="wrapper">
     <div class="image-container">
         <div class="image-wrapper" id="image1"></div>
         <div class="image-wrapper" id="image2"></div>
@@ -75,6 +100,8 @@
         <div class="image-wrapper" id="image13"></div>
         <div class="image-wrapper" id="image14"></div>
     </div>
+
+</div>
     <script>
         document.addEventListener('scroll', function() {
             const imageWrappers = document.querySelectorAll('.image-wrapper');
